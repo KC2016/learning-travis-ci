@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+cache: pip
+install:
+  - sudo apt-get install portaudio19-dev
+  - pip install -r requirements_windows.txt
+  - pip install -r test-requirements_windows.txt
+  - python -c "import nltk; nltk.download('stopwords')"
+script:
+  - pytest
+
